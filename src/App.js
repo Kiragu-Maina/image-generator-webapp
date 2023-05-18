@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css'
+import GoogleAds from './Aidfork';
 
 function App() {
   const [imageURL, setImageURL] = useState('');
@@ -23,6 +24,7 @@ function App() {
   };
 
   return (
+    <div>
     <div className="container">
       <h1>Image Generator App</h1>
       <button onClick={generateImage}>Generate Image</button>
@@ -32,6 +34,8 @@ function App() {
         imageURL && <img src={imageURL} alt="Generated Image" />
       )}
     </div>
+     <GoogleAds />
+     </div>
   );
 }
 
