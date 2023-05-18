@@ -8,7 +8,7 @@ function App() {
   const [imageSrc, setImageSrc] = useState('');
 
   useEffect(() => {
-    fetchImage();
+    generateImage();
   }, []);
 
  
