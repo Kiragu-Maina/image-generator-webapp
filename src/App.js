@@ -7,14 +7,11 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const generateImage = () => {
-    setIsLoading(true); // Set loading state to true
-
-    // Replace 'YOUR_API_ENDPOINT' with the actual endpoint that generates the image
     fetch('https://django-server-production-602e.up.railway.app/apis/generate-image')
-      .then(response => response.json())
-      .then(data => {
-        // Assuming the API response returns the image URL
-        setImageURL(data.imageURL);
+      .then(response => response.blob())
+      .then(blob => {
+        const imageURL = URL.createObjectURL(blob);
+        
         setIsLoading(false); // Set loading state to false after receiving the response
       })
       .catch(error => {
