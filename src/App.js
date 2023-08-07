@@ -13,7 +13,7 @@ function App() {
   const generateImage = async () => {
     setIsLoading(true); // Set loading state to true
     try {
-      await axios.get('django-rest-image-generation-production.up.railway.app/apis/generate-image', {
+      await axios.get('https://django-rest-image-generation-production.up.railway.app/apis/generate-image', {
         responseType: 'blob'
       })
       .then(response => {
